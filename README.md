@@ -69,7 +69,7 @@ Steps (Linux/MacOS):
 
 - Garmin Connect csv: from https://connect.garmin.com/modern/activities, scroll down as far as you want and press Export CSV.
         
-  - Only the activities that are loaded on the page will be exported into the csv file. This can cause problems when you want to export a lot of activities. However, I don't know of any other way to batch export activities into a csv file.
+  - Only the activities that are loaded on the web page will be exported into the csv file. This can cause problems when you want to export a lot of activities. However, I don't know of any other way to batch export activities into a csv file.
 
 - Strength Level csv: from https://my.strengthlevel.com/username/workouts (replace username with your username), scroll down to the bottom of the page and press Export CSV.
 
@@ -91,23 +91,27 @@ Takes Strength Level csv as input gives some stats and graphs.
 Run the script from top to bottom, input the Strength Level csv when prompted. 
 
 ### Import in Day One
-Currently, CSV import is only supported on iOS. I will add a JSON zip export as well, which can be imported on iOS, MacOS, Android, and in the Web App.
+To import the CSV into Day One, follow the instructions on the [Day One website](https://dayoneapp.com/guides/settings/importing-data-to-day-one/). Currently, CSV import is only supported on iOS. 
 
-To import the CSV into Day One, follow the instructions on the [Day One website](https://dayoneapp.com/blog/help_guides/importing-data-from-csv/). 
+To import the Zip file with JSON content into Day One, follow the instructions for your platform of choice on the [Day One website](https://dayoneapp.com/guides/settings/importing-data-to-day-one/). JSON import is supported on all platforms, I've tested on the Web App and iOS (not working). 
+
+### Notes
+- The timezone of the system that runs the script is used. I'm unsure of what timezones are used for the output CSVs, so the output times might not correspond to actual times.
 
 ## Roadmap
 
 - [x] Add venv installation (requirements.txt)
 - [x] Unify notebooks
+- [x] Add other output formats (JSON zip)
 - [ ] Improve generalizability by adding supported Garmin activities
   - Currently supported Garmin activity types: Running, Hiking, Walking, Treadmill Running, Cycling, Mountain Biking, Open Water Swimming, Pool Swim.
-  - Unsupported activities will only show some very generic info.
-- [ ] Add other output formats (JSON zip)
+  - Unsupported activities will only show some very generic info, and some might not work at all.
 - [ ] Create .exe installer
 - [ ] ...
 
 ## Issues
-- No timezone support
+- Many
+- Zip import on iOS is currently not working, gives an error (DOCore.DOImporterError error 1)
 
 ## License
 
